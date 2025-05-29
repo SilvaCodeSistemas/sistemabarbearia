@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sistema de Gestão para Barbearia - BarberPro</title>
+    <!-- Tailwind CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+    <!-- Google Fonts: Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
+    <!-- AOS Library for Animations -->
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f9fafb;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #1a2a44, #2a4365);
+            clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+        }
+
+        .btn-primary {
+            background-color: #d4af37;
+            color: #1a2a44;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: #b8972e;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            border: 2px solid #d4af37;
+            color: #d4af37;
+            transition: all 0.3s ease;
+        }
+
+        .btn-secondary:hover {
+            background-color: #d4af37;
+            color: #1a2a44;
+        }
+
+        .navbar {
+            background-color: rgba(26, 42, 68, 0.95);
+            backdrop-filter: blur(10px);
+        }
+
+        .testimonial {
+            transition: transform 0.3s ease;
+        }
+
+        .testimonial:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .sticky-cta {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .sticky-cta.visible {
+            opacity: 1;
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            /* 16:9 Aspect Ratio */
+            height: 0;
+            overflow: hidden;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar fixed top-0 w-full z-50 text-white py-4" aria-label="Main navigation">
+        <div class="container mx-auto flex justify-between items-center px-4">
+            <a href="#" class="text-2xl font-bold">BarberPro</a>
+            <div class="space-x-4">
+                <a href="#sobre" class="hover:text-yellow-400 transition">Sobre</a>
+                <a href="#beneficios" class="hover:text-yellow-400 transition">Benefícios</a>
+                <a href="#depoimentos" class="hover:text-yellow-400 transition">Depoimentos</a>
+                <a href="#compra" class="hover:text-yellow-400 transition">Comprar</a>
+                <a href="#faq" class="hover:text-yellow-400 transition">FAQ</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section with Video -->
+    <section class="hero text-white text-center py-32" data-aos="fade-up">
+        <div class="container mx-auto px-4">
+            <h1 class="text-5xl font-bold mb-4">BarberPro</h1>
+            <p class="text-xl mb-8 max-w-2xl mx-auto">Transforme a gestão da sua barbearia com o sistema mais completo e
+                intuitivo do mercado!</p>
+            <div class="video-container mb-8" data-aos="zoom-in">
+                <!-- Placeholder video; replace with your Hotmart-hosted or YouTube/Vimeo video URL -->
+                <iframe  
+                    src="https://www.youtube.com/embed/_tbgGP6VGos?si=m9a4SGGPoVQ4rIpP"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+            <br>
+            <div class="flex justify-center space-x-4">
+
+                <a href="#compra" class="btn-primary font-semibold py-3 px-8 rounded-full text-lg shadow-lg"
+                    aria-label="Comprar BarberPro">Quero meu sistema agora!</a>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre o Produto -->
+    <section id="sobre" class="py-16">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12" data-aos="fade-up">Por que escolher o
+                <strong>BarberPro</strong>?</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="feature-card bg-white p-6 rounded-lg shadow-md" data-aos="fade-up" data-aos-delay="100">
+                    <h3 class="text-xl font-semibold mb-3">Agendamento Intuitivo</h3>
+                    <p>Organize horários da equipe com facilidade e evite conflitos de agendamento.</p>
+                </div>
+                <div class="feature-card bg-white p-6 rounded-lg shadow-md" data-aos="fade-up" data-aos-delay="200">
+                    <h3 class="text-xl font-semibold mb-3">Gestão de Clientes</h3>
+                    <p>Mantenha um histórico detalhado para personalizar o atendimento e fidelizar clientes.</p>
+                </div>
+                <div class="feature-card bg-white p-6 rounded-lg shadow-md" data-aos="fade-up" data-aos-delay="300">
+                    <h3 class="text-xl font-semibold mb-3">Controle de Estoque</h3>
+                    <p>Monitore produtos automaticamente e evite faltas ou desperdícios.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefícios -->
+    <section id="beneficios" class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12" data-aos="fade-up">Benefícios do <strong>BarberPro</strong>
+            </h2>
+            <div class="max-w-3xl mx-auto space-y-4">
+                <p class="text-lg flex items-center" data-aos="fade-up">✅ Economize tempo com automação de tarefas
+                    rotineiras.</p>
+                <p class="text-lg flex items-center" data-aos="fade-up" data-aos-delay="100">✅ Aumente a satisfação dos
+                    clientes com um atendimento impecável.</p>
+                <p class="text-lg flex items-center" data-aos="fade-up" data-aos-delay="200">✅ Controle total com
+                    relatórios detalhados e precisos.</p>
+                <p class="text-lg flex items-center" data-aos="fade-up" data-aos-delay="300">✅ Destaque-se da
+                    concorrência com tecnologia de ponta.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Depoimentos -->
+    <section id="depoimentos" class="py-16">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12" data-aos="fade-up">O que nossos clientes dizem</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <div class="testimonial bg-white p-6 rounded-lg shadow-md" data-aos="fade-up">
+                    <p class="mb-4">"O <strong>BarberPro</strong> transformou minha barbearia! Tudo mais organizado e os
+                        clientes adoram a praticidade."</p>
+                    <p class="text-sm text-gray-600">– João P., Barbearia Estilo</p>
+                </div>
+                <div class="testimonial bg-white p-6 rounded-lg shadow-md" data-aos="fade-up" data-aos-delay="100">
+                    <p class="mb-4">"O suporte é excepcional e o sistema simplificou minha gestão de estoque e
+                        agendamentos."</p>
+                    <p class="text-sm text-gray-600">– Carlos M., Barbeiro</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bônus -->
+    <section id="bonus" class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-12" data-aos="fade-up">Bônus Exclusivos para quem adquirir hoje</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+                <div class="p-6 bg-white rounded-lg shadow-md" data-aos="fade-up" data-aos-delay="100">
+                    <h3 class="text-lg font-semibold mb-2">🎥 Treinamento Completo</h3>
+                    <p>Vídeos detalhados para você dominar o sistema rapidamente.</p>
+                </div>
+                <div class="p-6 bg-white rounded-lg shadow-md" data-aos="fade-up" data-aos-delay="200">
+                    <h3 class="text-lg font-semibold mb-2">🔄 Atualizações Grátis</h3>
+                    <p>Receba novas funcionalidades sem custos adicionais.</p>
+                </div>
+                <div class="p-6 bg-white rounded-lg shadow-md" data-aos="fade-up" data-aos-delay="300">
+                    <h3 class="text-lg font-semibold mb-2">📱 Grupo VIP</h3>
+                    <p>Junte-se a outros usuários para trocar dicas e estratégias.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Investimento -->
+    <section id="compra" class="py-16 text-center">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-8" data-aos="fade-up">Invista no sucesso da sua barbearia</h2>
+            <img src="https://images.unsplash.com/photo-1542831371-d531d36971e6?auto=format&fit=crop&w=600&q=80"
+                alt="Sistema para Barbearia" class="mx-auto mb-8 rounded-lg shadow-lg" style="max-width: 400px;"
+                data-aos="zoom-in" />
+            <p class="text-4xl font-bold text-yellow-500 mb-6" data-aos="fade-up">R$ <span
+                    class="text-5xl">499,90</span></p>
+            <p class="text-xl mb-8" data-aos="fade-up" data-aos-delay="100">Controle total do seu negócio com foco nos
+                seus clientes!</p>
+            <a href="https://www.hotmart.com/checkout"
+                class="btn-primary font-semibold py-4 px-10 rounded-full text-lg shadow-lg"
+                aria-label="Comprar BarberPro agora" data-aos="fade-up" data-aos-delay="200">Quero meu sistema
+                agora!</a>
+            <p class="text-gray-600 mt-4" data-aos="fade-up" data-aos-delay="300">Teste por 7 dias grátis com garantia
+                de satisfação ou seu dinheiro de volta.</p>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12" data-aos="fade-up">Perguntas Frequentes</h2>
+            <div class="max-w-3xl mx-auto space-y-4">
+                <div class="bg-white rounded-lg shadow-md" data-aos="fade-up">
+                    <button
+                        class="w-full text-left p-4 font-semibold flex justify-between items-center focus:outline-none"
+                        onclick="this.nextElementSibling.classList.toggle('hidden')" aria-expanded="false"
+                        aria-controls="faq1">
+                        Posso usar o sistema em mais de um dispositivo?
+                        <span>▼</span>
+                    </button>
+                    <div id="faq1" class="p-4 hidden">Sim! O sistema é acessível pelo computador e celular via
+                        navegador.</div>
+                </div>
+                <div class="bg-white rounded-lg shadow-md" data-aos="fade-up" data-aos-delay="100">
+                    <button
+                        class="w-full text-left p-4 font-semibold flex justify-between items-center focus:outline-none"
+                        onclick="this.nextElementSibling.classList.toggle('hidden')" aria-expanded="false"
+                        aria-controls="faq2">
+                        Preciso instalar algum programa?
+                        <span>▼</span>
+                    </button>
+                    <div id="faq2" class="p-4 hidden">Não, o sistema é 100% online, acessível pela internet.</div>
+                </div>
+                <div class="bg-white rounded-lg shadow-md" data-aos="fade-up" data-aos-delay="200">
+                    <button
+                        class="w-full text-left p-4 font-semibold flex justify-between items-center focus:outline-none"
+                        onclick="this.nextElementSibling.classList.toggle('hidden')" aria-expanded="false"
+                        aria-controls="faq3">
+                        E se eu tiver dúvidas ou precisar de ajuda?
+                        <span>▼</span>
+                    </button>
+                    <div id="faq3" class="p-4 hidden">Nosso suporte está disponível via chat, e-mail e WhatsApp.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sticky CTA -->
+    <a href="https://www.hotmart.com/checkout"
+        class="sticky-cta btn-primary font-semibold py-3 px-6 rounded-full text-lg shadow-lg hidden"
+        aria-label="Comprar BarberPro agora">Comprar Agora</a>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12 text-center">
+        <div class="container mx-auto px-4">
+            <p class="text-lg">© 2025 BarberPro. Todos os direitos reservados.</p>
+            <p class="text-sm">Soluções inovadoras para barbearias e salões de beleza.</p>
+        </div>
+    </footer>
+
+    <!-- AOS Library JS -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 800, once: true });
+
+        // Sticky CTA visibility
+        window.addEventListener('scroll', () => {
+            const stickyCta = document.querySelector('.sticky-cta');
+            if (window.scrollY > 300) {
+                stickyCta.classList.remove('hidden');
+                stickyCta.classList.add('visible');
+            } else {
+                stickyCta.classList.add('hidden');
+                stickyCta.classList.remove('visible');
+            }
+        });
+    </script>
+</body>
+
+</html>
